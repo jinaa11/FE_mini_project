@@ -19,7 +19,6 @@ const HomeStackNavigation = () => {
                backgroundColor: '#fff',
                height: 100,
                shadowColor: '#222',
-
                shadowOffset: {
                   width: 0,
                   height: 5
