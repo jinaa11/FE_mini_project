@@ -1,6 +1,6 @@
 import Main from "../screens/Main";
-// import Products from "../screens/Products";
-// import ProductDetail from "../screens/ProductDetail";
+import Products from "../screens/Products";
+import ProductDetail from "../screens/ProductDetail";
 
 export const stackMainData = [
    {
@@ -8,16 +8,16 @@ export const stackMainData = [
       name: 'Main',
       component: Main,
    },
-   // {
-   //    id: 2,
-   //    name: 'Products',
-   //    component: Products,
-   // },
-   // {
-   //    id: 3,
-   //    name: 'ProductDetail',
-   //    component: ProductDetail,
-   // },
+   {
+      id: 2,
+      name: 'Products',
+      component: Products,
+   },
+   {
+      id: 3,
+      name: 'ProductDetail',
+      component: ProductDetail,
+   },
 ]
 
 export const stackMainCenterData = [
@@ -31,4 +31,12 @@ export const stackMainCenterData = [
          }
       ]
    }
+]
+
+const stackMainLeftData = [
+
+]
+
+const stackMainRightData = [
+
 ]

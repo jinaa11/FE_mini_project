@@ -10,16 +10,14 @@ const RecommendWrap = styled.View`
 
 `;
 
-const ProductImg = styled.Image`
-   width: 300px;
-   height: 300px;
-`;
-
-const RecommendProduct = () => {
+const RecommendProduct = (props) => {
    const [productData, setProductData] = useState();
 
    const getData = async () => {
       try {
+         // AVD로 데이터 불러올 때 주소(localhost 대신 10.0.2.2)
+         // const res = await axios.get('http://10.0.2.2:3001/products')
+         // 웹으로 데이터 불러올 때 주소
          const res = await axios.get('http://localhost:3001/products')
             .catch(err => console.log(err))
          console.log(res.data)
@@ -37,9 +35,7 @@ const RecommendProduct = () => {
          <ScrollView horizontal={true}>
             {
                productData && productData.map(product => (
-                  // <ProductImg key={product.id} source={product.thumbnail} />
-                  <ProductCard key={product.id} data={product} />
-
+                  <ProductCard key={product.id} data={product} navigation={props.navigation}/>
                ))
             }
          </ScrollView>

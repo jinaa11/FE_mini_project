@@ -115,15 +115,47 @@
     {
       "id" : 1,
       "name" : "1+1 발렌타인 이벤트",
-      "eventProductList" : [ 1,2,3,4,5,6,7,8,9,10 ]
+      "eventProductList" : [ 
+        {
+          "id" : 1,
+          "productId" : 1
+        },
+        {
+          "id" : 2,
+          "productId" : 2
+        },
+        {
+          "id" : 3,
+          "productId" : 3
+        }
+      ]
+    },
+    {
+      "id" : 2,
+      "name" : "졸업 축하 이벤트",
+      "eventProductList" : [ 
+        {
+          "id" : 1,
+          "productId" : 1
+        },
+        {
+          "id" : 2,
+          "productId" : 2
+        }
+      ]
     }
-
   ],
   "users" : [
     {
       "id" : 1,
       "name" : "김진아",
-      "email" : "jinaa11@gmail.com",
+      "email" : "jinaa2047@gmail.com",
+      "password" : "1234"
+    },
+    {
+      "id" : 2,
+      "name" : "안영진",
+      "email" : "beat1103@gmail.com",
       "password" : "1234"
     }
   ]

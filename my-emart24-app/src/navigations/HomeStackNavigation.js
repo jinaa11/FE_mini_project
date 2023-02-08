@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { stackMainData, stackMainCenterData } from '../datas/StackMainData';
+import { stackMainData, stackMainCenterData } from '../datas/stackMainData';
 
 const Stack = createStackNavigator();
 

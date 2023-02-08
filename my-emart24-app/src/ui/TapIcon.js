@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components/native';
 
 const EmartTabIcon = styled.Image`
-   width: 25px;
+   width: 30px;
    height: 30px;
 `;
 
