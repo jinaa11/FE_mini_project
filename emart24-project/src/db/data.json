@@ -148,14 +148,14 @@
   "users" : [
     {
       "id" : 1,
-      "name" : "안영진",
-      "email" : "beat1103@gmail.com",
+      "name" : "김진아",
+      "email" : "jinaa2047@gmail.com",
       "password" : "1234"
     },
     {
       "id" : 2,
-      "name" : "안영진",
-      "email" : "beat1103@gmail.com",
+      "name" : "홍길동",
+      "email" : "gildong2@gmail.com",
       "password" : "1234"
     }
   ]

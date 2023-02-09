@@ -1,0 +1,9 @@
+.mainSectionWrap img {
+   width: 180px;
+   height: 180px;
+}
+
+.mainSectionWrap p {
+   font-size: 25px;
+   font-weight: bold;
+}

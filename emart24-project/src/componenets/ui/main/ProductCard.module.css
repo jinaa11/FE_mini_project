@@ -1,0 +1,27 @@
+.productCard {
+   float: left;
+   width: 30%;
+   text-align: center;
+   
+}
+
+.productCard img {
+   width: 180px;
+   height: 180px;
+   border: 1px solid rgba(0,0,0,0.1);
+   border-radius: 20px;
+}
+
+.productCard img:hover {
+   color: 'red';
+}
+
+.productCard p {
+   font-size: 0.8rem;
+}
+
+.price {
+   font-weight: bold;
+   color: red;
+   
+}

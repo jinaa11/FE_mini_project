@@ -25,3 +25,22 @@ export const headerMenu = [
       link: '/startUp-info'
    },
 ]
+
+// 로그인 ,회원가입, 장바구니
+export const headerTop = [
+   {
+      id: 1,
+      name: '로그인',
+      link: '/login'
+   },
+   {
+      id: 2,
+      name: '회원가입',
+      link: '/join'
+   },
+   {
+      id: 3,
+      name: '장바구니',
+      link: '/cart'
+   },
+]
