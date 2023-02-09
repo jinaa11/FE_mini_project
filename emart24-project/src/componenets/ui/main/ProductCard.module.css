@@ -5,7 +5,7 @@
    
 }
 
-.productCard img {
+.productCard img{
    width: 180px;
    height: 180px;
    border: 1px solid rgba(0,0,0,0.1);
@@ -13,11 +13,15 @@
 }
 
 .productCard img:hover {
-   color: 'red';
+   outline: 5px solid #ffb71b;
+   outline-offset: -3px;
+   transition: 0.5s;
+   
 }
 
 .productCard p {
-   font-size: 0.8rem;
+   font-size: 0.9rem;
+   margin-bottom: 20px;
 }
 
 .price {

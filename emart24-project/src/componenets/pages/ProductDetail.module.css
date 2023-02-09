@@ -8,8 +8,61 @@
 .productWrap img {
    width: 500px;
    height: 500px;
+   margin-top: 20px;
+   border: 1px solid rgba(0,0,0,0.2);
 }
 
 .script {
-   margin: 90px 50px;
+   margin: 10px 50px;
+}
+
+.script p {
+   font-size: 1.2rem;
+}
+
+.price {
+   font-weight: bold;
+
+}
+
+.cartBox {
+   width: 100%;
+   height: 30%;
+   border: 1px solid rgba(0, 0, 0, 0.2);
+   background-color: #f3f3f3;
+}
+.cartBox p {
+   margin-left: 10px;
+}
+
+.title {
+   margin-left: 10px;
+}
+
+.cartBox span {
+   float: left;
+   margin-top: 40px;
+   padding: 5px 10px;
+   text-align: center;
+   border: 1px solid rgba(0, 0, 0, 0.3);
+
+
+}
+
+.cartBtn {
+   width: 150px;
+   padding: 10px 15px;
+   margin-top: 100px;
+   text-align: center;
+   /* color: white; */
+   font-weight: 400px;
+   border: 3px solid #ffb71b;
+   border-radius: 30px;
+   /* background-color: #ffb71b; */
+}
+
+.cartBtn:hover {
+   transition: box-shadow 500ms ease-in-out, color 300ms ease-in-out;
+   box-shadow: 0 0 40px 40px #ffb71b inset;
+   color: white;
 }
