@@ -32,7 +32,7 @@ const ProductDetail = (props) => {
          <Text>{productData.description}</Text>
          <Text>{productData.price}원</Text>
          <Text>★ {productData.rating}</Text>
-         <Button title=''></Button>
+         {/* <Button title=''></Button> */}
       </Container>
    );
 }

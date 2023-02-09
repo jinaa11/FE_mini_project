@@ -34,7 +34,7 @@ const Main = ({ navigation, route }) => {
    return (
       <Container>
          <Title>
-            <TitleText>추천 상품</TitleText>
+            <TitleText>행사 상품</TitleText>
             <TitleBtn
                title="더보기>"
                onPress={() => navigation.navigate('Products')}
