@@ -271,16 +271,28 @@
   ],
   "carts": [
     {
-      "productId": 2,
+      "productId": 11,
       "userId": 1,
-      "qty": 3,
+      "qty": 6,
       "id": 1
     },
     {
       "productId": 4,
       "userId": 1,
-      "qty": 13,
+      "qty": 5,
       "id": 2
+    },
+    {
+      "productId": 12,
+      "userId": 1,
+      "qty": 8,
+      "id": 3
+    },
+    {
+      "productId": 14,
+      "userId": 1,
+      "qty": 6,
+      "id": 4
     }
   ]
 }

@@ -12,7 +12,7 @@ function ProductDetail() {
    const navigate = useNavigate();
 
    const [cartCount, setCartCount] = useState(1);
-   const [cartDatas, setCartDatas] = useState([]);
+   const [cartDatas, setCartDatas] = useState();
 
 
    // id 별로 products data get
@@ -36,7 +36,7 @@ function ProductDetail() {
          })
    }, [userId, cartCount])
 
-   // 같은 상품 아이디의 id와 qty 
+   // 같은 상품 아이디의 id와 qty get
    const getCartIdAsExistSameProduct = async () => {
       let result = false;
       await axios.get(`http://localhost:3001/carts?userId=1&productId=${id}`)
@@ -62,7 +62,7 @@ function ProductDetail() {
                .then(res => {
                   setCartCount(cartCount)
                   console.log(cartCount, res.data)
-                  alert("장바구니 추가")
+                  alert("상품을 장바구니에 담았습니다.")
                })
                .catch(err => console.log(err));
          } else {
