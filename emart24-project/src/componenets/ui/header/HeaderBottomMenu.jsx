@@ -5,10 +5,10 @@ import style from './HeaderBottomMenu.module.css';
 
 function HeaderMenu() {
    return (
-      <header className={style.headerTopWrap}>
+      <div className={style.headerTopWrap}>
          <div className={style.logo}>
             <Link to='/'>
-               <img src={require('../../../img/logo.png')} alt='logo' />
+               <img src="/assets/images/logo.png" alt='logo' />
             </Link>
          </div>
          <nav className={style.menu}>
@@ -22,7 +22,7 @@ function HeaderMenu() {
                }
             </ul>
          </nav>
-      </header>
+      </div>
    );
 }
 

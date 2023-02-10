@@ -1,7 +1,6 @@
 .topMenu ul{
    display: flex;
-   float: right;
-
+   justify-content: end;
 }
 
 .topMenu ul li {

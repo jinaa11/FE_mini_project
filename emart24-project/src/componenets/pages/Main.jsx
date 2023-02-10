@@ -3,7 +3,7 @@ import MainSection from "../ui/main/MainSection";
 
 function Main() {
    return (
-      <div>
+      <div className="container">
          <MainSection />
       </div>
    );

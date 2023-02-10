@@ -19,8 +19,9 @@ function MainSection() {
    }, [])
 
    return (
-      <sesction className={style.mainSectionWrap}>
+      <section>
          <p>상품 보기</p>
+         <div className={style.productList}>
          {
             productData && productData.map(product => (
                <ProductCard key={product.id}
@@ -28,7 +29,8 @@ function MainSection() {
                />
             ))
          }
-      </sesction>
+         </div>
+      </section>
    );
 }
 

@@ -27,14 +27,14 @@ function ProductDetail() {
       }
    }, [id])
 
-   // carts data get
-   useEffect(() => {
-      axios.get(`http://localhost:3001/carts?userId=${userId}`)
-         .then(res => {
-            console.log(res.data)
-            setCartDatas(res.data)
-         })
-   }, [userId, cartCount])
+   // // carts data get
+   // useEffect(() => {
+   //    axios.get(`http://localhost:3001/carts?userId=${userId}`)
+   //       .then(res => {
+   //          console.log(res.data)
+   //          setCartDatas(res.data)
+   //       })
+   // }, [userId, cartCount])
 
    // 같은 상품 아이디의 id와 qty get
    const getCartIdAsExistSameProduct = async () => {
@@ -76,7 +76,7 @@ function ProductDetail() {
                   setCartCount(cartCount);
                   console.log(cartCount, res.data);
                   window.alert("상품을 장바구니에 담았습니다.");
-                  //navigate('/cart');
+                  // navigate('/cart');
                })
                .catch(err => console.log(err))
          }
@@ -105,7 +105,7 @@ function ProductDetail() {
                   <img src={product.thumbnail} alt={product.description} />
                   <div className={style.script}>
                      <h2>{product.name}</h2>
-                     <p>★ {product.rating}</p>
+                     <p>{product.rating}</p>
                      <p>{product.description}</p>
                      <p className={style.price}>{product.price}원</p>
                      {/* 컴포넌트로 따로 만들기 */}

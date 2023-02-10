@@ -14,7 +14,7 @@ import ProductDetail from './componenets/pages/ProductDetail';
 
 function App() {
   return (
-    <div className='appWrap'>
+    <div>
       <BrowserRouter>
         <Header />
         <Routes>

@@ -6,12 +6,16 @@ function ProductCard({ product }) {
 
 
    return (
-      <div className={style.productCard}>
-         <Link to={`/product-detail/${product.id}`}>
-            <img src={product.thumbnail} alt={product.description} />
-         </Link>
-         <p>{product.name}</p>
-         <p className={style.price}>{product.price}원</p>
+      <div className={style.productCardWrap}>
+         <div className={style.productCard}>
+            <Link to={`/product-detail/${product.id}`}>
+               <img src={product.thumbnail} alt={product.description} />
+            </Link>
+         </div>
+         <div className={style.productInfo}>
+            <p>{product.name}</p>
+            <p className={style.price}>{product.price}원</p>
+         </div>
       </div>
 
    );
