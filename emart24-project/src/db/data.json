@@ -109,6 +109,116 @@
       "category": "초콜릿가공품",
       "brand": "(주)천하코퍼레이션",
       "rating": 5
+    },
+    {
+      "id": 11,
+      "name": "[서울우유] 서울우유 2.3L",
+      "thumbnail": "https://sitem.ssgcdn.com/85/55/09/item/0000007095585_i1_1100.jpg",
+      "price": 5980,
+      "discount": 0,
+      "description": "서울우유협동조합 -본조합: 서울특별시 중랑구 중랑천구 71(상봉동)",
+      "category": "우유",
+      "brand": "서울우유",
+      "rating": 4.9
+    },
+    {
+      "id": 12,
+      "name": "서울우유 아침에주스 오렌지 1.8L",
+      "thumbnail": "https://sitem.ssgcdn.com/43/60/51/item/1000015516043_i1_550.jpg",
+      "price": 4880,
+      "discount": 0,
+      "description": "FDOC(플로리다 주정부 감귤국)의 공식 인증 등록된 플로리다 A등급 오렌지 과즙을 100% 사용해서 만든 냉장 유통 주스입니다.",
+      "category": "냉장주스",
+      "brand": "서울우유",
+      "rating": 4.9
+    },
+    {
+      "id": 13,
+      "name": "[농심] 카프리썬 오렌지망고 2L (200ml10입)",
+      "thumbnail": "https://sitem.ssgcdn.com/96/08/61/item/0000006610896_i1_1100.jpg",
+      "price": 6980,
+      "discount": 0,
+      "description": "세계적인 주스 브랜드 독일의 카프리 썬사와 기술 제휴로 국내에서 생산된 음료입니다. ",
+      "category": "과채음료",
+      "brand": "농심",
+      "rating": 4.9
+    },
+    {
+      "id": 14,
+      "name": "[미떼] 핫초코 마일드 10개입",
+      "thumbnail": "https://sitem.ssgcdn.com/37/79/83/item/0000006837937_i1_290.jpg",
+      "price": 5280,
+      "discount": 0,
+      "description": "부드러운 달콤함을 간직한 미떼 핫초코 마일드입니다. ",
+      "category": "기타 코코아 가공품",
+      "brand": "동서식품",
+      "rating": 4.9
+    },
+    {
+      "id": 15,
+      "name": "청정원 홍초 900ml(석류)",
+      "thumbnail": "https://sitem.ssgcdn.com/33/09/81/item/0000006810933_i1_1100.jpg",
+      "price": 7480,
+      "discount": 0,
+      "description": "자연발효초 100%를 사용하여 만든 청정원의 홍초 석류입니다. ",
+      "category": "음료 베이스",
+      "brand": "청정원",
+      "rating": 4.9
+    },
+    {
+      "id": 16,
+      "name": "해태 티피코코크런치110g",
+      "thumbnail": "https://sitem.ssgcdn.com/44/46/71/item/1000356714644_i1_1100.jpg",
+      "price": 3080,
+      "discount": 0.32,
+      "description": "TP 코코 크런치 (단백질 함유) ",
+      "category": "초콜릿 가공품",
+      "brand": "해태",
+      "rating": 4.6
+    },
+    {
+      "id": 17,
+      "name": "오리온 비쵸비 125g",
+      "thumbnail": "https://sitem.ssgcdn.com/61/89/00/item/1000519008961_i1_1100.jpg",
+      "price": 2380,
+      "discount": 0,
+      "description": "달콤한 기분전환이 필요하셨다면, 오리온이 준비한 비쵸비를 만나 보세요. ",
+      "category": "초콜릿가공품",
+      "brand": "오리온",
+      "rating": 4.8
+    },
+    {
+      "id": 18,
+      "name": "No Brand 노브랜드 고르곤졸라치즈소프트콘 150 g",
+      "thumbnail": "https://sitem.ssgcdn.com/95/86/92/item/1000314928695_i1_550.jpg",
+      "price": 1480,
+      "discount": 0,
+      "description": "치즈와 옥수수가 만나 탄생한 조화로운 맛, 노브랜드 고르곤졸라치즈 소프트콘이에요. ",
+      "category": "음료 베이스",
+      "brand": "가공식품",
+      "rating": 4.8
+    },
+    {
+      "id": 19,
+      "name": "삼립 발효미종 정통단팥호빵380g",
+      "thumbnail": "https://sitem.ssgcdn.com/28/90/32/item/1000518329028_i1_1100.jpg",
+      "price": 5380,
+      "discount": 0,
+      "description": "단팥 앙금이 부드럽게 입안에서 퍼지는 따뜻하고 달콤한 겨울철 대표 간식입니다. ",
+      "category": "빵류",
+      "brand": "삼립",
+      "rating": 4.7
+    },
+    {
+      "id": 20,
+      "name": "삼립 소화가잘되는우유가들어간식빵420g",
+      "thumbnail": "https://sitem.ssgcdn.com/11/61/01/item/1000295016111_i1_550.jpg",
+      "price": 2980,
+      "discount": 0,
+      "description": "결이 부드러워 토스트기에 살짝 구워 먹으면 더욱 맛있어요.달콤한 과일 잼을 발라 먹어도 좋고, 계란 물과 함께 익혀 먹어도 맛있답니다. ",
+      "category": "빵류",
+      "brand": "삼립",
+      "rating": 4.8
     }
   ],
   "events": [
@@ -160,6 +270,17 @@
     }
   ],
   "carts": [
-
+    {
+      "productId": 2,
+      "userId": 1,
+      "qty": 3,
+      "id": 1
+    },
+    {
+      "productId": 4,
+      "userId": 1,
+      "qty": 13,
+      "id": 2
+    }
   ]
 }

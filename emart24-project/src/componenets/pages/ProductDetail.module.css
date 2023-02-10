@@ -17,7 +17,7 @@
 }
 
 .script p {
-   font-size: 1.2rem;
+   font-size: 1.1rem;
 }
 
 .price {
@@ -45,8 +45,14 @@
    padding: 5px 10px;
    text-align: center;
    border: 1px solid rgba(0, 0, 0, 0.3);
+   cursor: pointer;
+}
 
-
+.total {
+   float: right;
+   margin-top: 45px;
+   margin-right: 5px;
+   color: red;
 }
 
 .cartBtn {
@@ -54,11 +60,10 @@
    padding: 10px 15px;
    margin-top: 100px;
    text-align: center;
-   /* color: white; */
    font-weight: 400px;
    border: 3px solid #ffb71b;
    border-radius: 30px;
-   /* background-color: #ffb71b; */
+   cursor: pointer;
 }
 
 .cartBtn:hover {

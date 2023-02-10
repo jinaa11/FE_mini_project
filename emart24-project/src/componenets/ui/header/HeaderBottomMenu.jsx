@@ -8,7 +8,7 @@ function HeaderMenu() {
       <header className={style.headerTopWrap}>
          <div className={style.logo}>
             <Link to='/'>
-               <img src='./assets/img/logo.png' alt='logo' />
+               <img src={require('../../../img/logo.png')} alt='logo' />
             </Link>
          </div>
          <nav className={style.menu}>
