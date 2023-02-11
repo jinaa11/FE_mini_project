@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useRecoilState } from "recoil";
 import style from './CartList.module.css';
+import { CartCountState } from '../../state/CartCountState';
 
 function CartList({ cartData }) {
    const [cartObj, setCartObj] = useState(
@@ -15,6 +17,8 @@ function CartList({ cartData }) {
       }
    )
 
+   const [cartQty, setCartQty] = useRecoilState(CartCountState);
+
    const url = `http://localhost:3001/products/${cartData.productId}`;
 
    useEffect(() => {
@@ -26,7 +30,6 @@ function CartList({ cartData }) {
                productName: res.data.name,
                productPrice: res.data.price
             })
-            console.log(cartObj);
          })
    }, [url])
 
@@ -64,22 +67,33 @@ function CartList({ cartData }) {
       console.log(cartObj);
    }
 
-   // delete qty
+   // delete qty (삭제 후 바로 반영 안 됨 - 새로고침 눌러야함)
    const handleDelete = () => {
-      
+      axios.delete(`http://localhost:3001/carts/${cartObj.id}`)
+         .then(res => {
+            console.log(res.data)
+            setCartQty(cartQty - 1)
+         })
+         .catch(err => console.log(err))
    }
 
    return (
-      <div className={style.cardListWrap}>
-         <img className={style.image} src={cartObj.productImg} alt={cartObj.productName} />
+      <div className={style.cartList}>
+         <img src={cartObj.productImg} alt={cartObj.productName} />
+
          <p>{cartObj.productName}</p>
-         <div>
-            <p>{cartObj.productPrice * cartObj.qty}원</p>
-            <p onClick={handleQtyDecre}><span>-</span></p>
-            <p><span>{cartObj.qty}</span></p>
-            <p onClick={handleQtyIncre}><span>+</span></p>
+         <div className={style.cartInfo}>
+            <p className={style.price}>{cartObj.productPrice * cartObj.qty}원</p>
+            <div className={style.qtyBtn}>
+               <p onClick={handleQtyDecre}>-</p>
+               <p>{cartObj.qty}</p>
+               <p onClick={handleQtyIncre}>+</p>
+            </div>
          </div>
-      </div >
+         <div className={style.delete}>
+            <span><img onClick={handleDelete} src='/assets/images/delete.png' alt="삭제" /></span>
+         </div>
+      </div>
    );
 }
 

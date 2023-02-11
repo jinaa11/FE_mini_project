@@ -12,7 +12,6 @@ function ProductDetail() {
    const navigate = useNavigate();
 
    const [cartCount, setCartCount] = useState(1);
-   const [cartDatas, setCartDatas] = useState();
 
 
    // id 별로 products data get
@@ -26,15 +25,6 @@ function ProductDetail() {
          console.log(err)
       }
    }, [id])
-
-   // // carts data get
-   // useEffect(() => {
-   //    axios.get(`http://localhost:3001/carts?userId=${userId}`)
-   //       .then(res => {
-   //          console.log(res.data)
-   //          setCartDatas(res.data)
-   //       })
-   // }, [userId, cartCount])
 
    // 같은 상품 아이디의 id와 qty get
    const getCartIdAsExistSameProduct = async () => {
@@ -63,6 +53,7 @@ function ProductDetail() {
                   setCartCount(cartCount)
                   console.log(cartCount, res.data)
                   alert("상품을 장바구니에 담았습니다.")
+                  navigate('/cart');
                })
                .catch(err => console.log(err));
          } else {
@@ -76,7 +67,7 @@ function ProductDetail() {
                   setCartCount(cartCount);
                   console.log(cartCount, res.data);
                   window.alert("상품을 장바구니에 담았습니다.");
-                  // navigate('/cart');
+                  navigate('/cart');
                })
                .catch(err => console.log(err))
          }

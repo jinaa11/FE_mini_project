@@ -20,7 +20,7 @@ function MainSection() {
 
    return (
       <section>
-         <p>상품 보기</p>
+         <p>전체 상품</p>
          <div className={style.productList}>
          {
             productData && productData.map(product => (

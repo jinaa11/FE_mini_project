@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { headerMenu } from "../../../data/headerMenu";
 import style from './HeaderBottomMenu.module.css';
 
-function HeaderMenu() {
+function HeaderBottomMenu() {
    return (
       <div className={style.headerTopWrap}>
          <div className={style.logo}>
@@ -26,4 +26,4 @@ function HeaderMenu() {
    );
 }
 
-export default HeaderMenu;
+export default HeaderBottomMenu;

@@ -1,8 +1,41 @@
-.cartListWrap {
-  
+.cartList {
+   width: 100%;
+   display: flex;
+   justify-content:space-between;
+   align-items: center;
+   border: 1px solid #000;
+   margin-top: 20px;
 }
 
-.image {
-   width: 100px;
-   height: 100px;
+.cartList img {
+   width: 15vw;
+   height: auto;
+   
+}
+
+.cartInfo {
+   justify-content: center;
+   align-items: center;
+}
+
+.price {
+   font-size: 1.2rem;
+   font-weight: bold;
+}
+
+.qtyBtn {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;  
+}
+.qtyBtn p{
+   border: 1px solid rgba(0,0,0,0.3);
+   padding: 0 10px;
+}
+
+.delete img{
+   width: 50px;
+   height: auto;
+   margin: 0 50px;
+   cursor: pointer;
 }

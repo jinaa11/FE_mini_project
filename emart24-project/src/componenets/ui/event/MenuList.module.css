@@ -1,0 +1,35 @@
+.menuList {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.menuList ul {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.menuList ul li{
+   list-style: none;
+   color: rgba(0,0,0,0.65);
+   margin-left: 30px;  
+}
+
+.menuBtn {
+   width: auto;
+   padding: 10px 15px;
+   text-align: center;
+   font-weight: 500px;
+   color: #fff;
+   /* border: 3px solid #ffb71b; */
+   background-color: #ffb71b;
+   border-radius: 30px;
+   cursor: pointer;
+}
+
+/* .menuBtn:hover {
+   transition: box-shadow 500ms ease-in-out, color 300ms ease-in-out;
+   box-shadow: 0 0 40px 40px #ffb71b inset;
+   color: white;
+} */
