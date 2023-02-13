@@ -11,12 +11,6 @@ function Login() {
    const [inputPw, setInputPw] = useState('');
    const [button, setButton] = useState(true);
 
-
-   const [userData, setUserData] = useState({
-      email: '',
-      password: '',
-   })
-
    const navigate = useNavigate();
 
    const [login, setLogin] = useRecoilState(logInState);

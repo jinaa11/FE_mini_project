@@ -224,35 +224,38 @@
   "events": [
     {
       "id": 1,
-      "name": "1+1 발렌타인 이벤트",
-      "eventProductList": [
-        {
-          "id": 1,
-          "productId": 1
-        },
-        {
-          "id": 2,
-          "productId": 2
-        },
-        {
-          "id": 3,
-          "productId": 3
-        }
-      ]
+      "name": "1+1 발렌타인 이벤트"
     },
     {
       "id": 2,
-      "name": "졸업 축하 이벤트",
-      "eventProductList": [
-        {
-          "id": 1,
-          "productId": 1
-        },
-        {
-          "id": 2,
-          "productId": 2
-        }
-      ]
+      "name": "졸업 축하 이벤트"
+    }
+  ],
+  "eventProductList": [
+    {
+      "id": 1,
+      "productId": 3,
+      "eventId": 1
+    },
+    {
+      "id": 2,
+      "productId": 7,
+      "eventId": 1
+    },
+    {
+      "id": 3,
+      "productId": 9,
+      "eventId": 1
+    },
+    {
+      "id": 4,
+      "productId": 4,
+      "eventId": 2
+    },
+    {
+      "id": 5,
+      "productId": 5,
+      "eventId": 2
     }
   ],
   "users": [
@@ -279,7 +282,38 @@
       "email": "abc@naver.com",
       "password": "1234",
       "id": 4
+    },
+    {
+      "name": "김철수",
+      "email": "kcs@gmail.com",
+      "password": "1234",
+      "id": 5
     }
   ],
-  "carts": []
+  "carts": [
+    {
+      "productId": 2,
+      "userId": 1,
+      "qty": 3,
+      "id": 1
+    },
+    {
+      "productId": 4,
+      "userId": 1,
+      "qty": 3,
+      "id": 2
+    },
+    {
+      "productId": 19,
+      "userId": 1,
+      "qty": 4,
+      "id": 3
+    },
+    {
+      "productId": 17,
+      "userId": 1,
+      "qty": 1,
+      "id": 4
+    }
+  ]
 }

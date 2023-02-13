@@ -1,0 +1,55 @@
+.wrap {
+   width: 100%;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ 
+ }
+ 
+ .changePw {
+   width: 35%;
+   height: 700px;
+   background: #f3f3f3;
+   border-radius: 20px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+ }
+ 
+ .changePw h2 {
+   font-size: 2em;
+ }
+ 
+ .changePw_input {
+   margin-top: 20px;
+   width: 80%;
+ }
+ 
+ .changePw_input input {
+   width: 80%;
+   height: 50px;
+   border-radius: 30px;
+   margin-top: 10px;
+   padding: 0px 20px;
+   border: 1px solid lightgray;
+   outline: none;
+ }
+
+ 
+ .modify_btn {
+   margin-top: 40px;
+   width: 80%;
+ }
+ 
+ .modify_btn p {
+   width: 100%;
+   height: 50px;
+   text-align: center;
+   border-radius: 40px;
+   background-color: #ffb71b;
+   color: white;
+   font-size: 1.2em;
+   cursor: pointer;
+ }

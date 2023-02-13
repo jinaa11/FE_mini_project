@@ -11,6 +11,8 @@ import Login from './componenets/pages/Login';
 import Join from './componenets/pages/Join';
 import Cart from './componenets/pages/Cart';
 import ProductDetail from './componenets/pages/ProductDetail';
+import Mypage from './componenets/pages/Mypage';
+import ChangePw from './componenets/ui/mypage/ChangePw';
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
           <Route path="/join" element={<Join />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/product-detail/:id" element={<ProductDetail />} />
+          <Route path="/mypage" element={<Mypage />} />
+          <Route path="/change-pw" element={<ChangePw />} />
         </Routes>
       </BrowserRouter>
     </div>

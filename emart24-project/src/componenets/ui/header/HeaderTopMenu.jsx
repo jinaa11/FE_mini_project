@@ -12,6 +12,7 @@ function HeaderTopMenu() {
    console.log(login);
 
    const handleLogout = () => {
+      // 로그인, 토큰 스테이트 초기화
       setLogin(false);
       setToken('');
    }

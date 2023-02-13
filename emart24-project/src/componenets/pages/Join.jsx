@@ -4,90 +4,69 @@ import { useNavigate } from "react-router-dom";
 import style from './Join.module.css';
 
 function Join() {
-   const [email, setEmail] = useState('');
-   const [name, setName] = useState('');
-   const [pw, setPw] = useState('');
-   const [confirmPw, setConfirmPw] = useState('');
    const [emailMsg, setEmailMsg] = useState('');
-   const [isActive, setIsActive] = useState(false);
-   const [isDupliCheck, setIsDupliCheck] = useState(false);
+   const [isDuplicationCheck, setIsDuplicationCheck] = useState(false);
 
-   const activeClass = isActive ? style.activeBtn : style.disabledBtn;
    const navigate = useNavigate();
 
-   // const [inputs, setInputs] = useState({
-   //    email: '',
-   //    password: '',
-   //    confirmPw: '',
-   //    name: ''
-   // })
+   const [inputs, setInputs] = useState({
+      email: '',
+      password: '',
+      confirmPw: '',
+      name: ''
+   })
 
-   // const handleChange = (e) => {
-   //    const { name, value } = e.target;
-   //    const nextInputs = {
-   //       inputs, [name]: value,
-   //    }
-   //    setInputs(nextInputs)
-   // }
-
-   const handleEmail = (e) => {
-      setIsDupliCheck(false);
-      setEmail(e.target.value);
-      if(!email.includes('@')) {
+   const handleOnChange = (e) => {
+      setInputs({
+         ...inputs,
+         [e.target.name]: e.target.value,
+      })
+      setIsDuplicationCheck(false);
+      if(!inputs.email.includes('@')) {
          setEmailMsg("이메일 형식에 맞지 않습니다.");
       } else {
          setEmailMsg("");
       }
    }
-   const handleName = (e) => {
-      setName(e.target.value);
-   }
-   const handlePw = (e) => {
-      setPw(e.target.value);
-   }
-   const handleConfirmPw = (e) => {
-      setConfirmPw(e.target.value);
-   }
 
    const handleJoin = (e) => {
       e.preventDefault();
-      if (!email) {
+      if (!inputs.email) {
          alert("이메일을 입력해주세요.");
-      } else if (!pw) {
+      } else if (!inputs.pw) {
          alert("비밀번호를 입력해주세요.");
-      } else if (!confirmPw) {
+      } else if (!inputs.confirmPw) {
          alert("비밀번호 확인을 입력해주세요.");
-      } else if (pw !== confirmPw) {
+      } else if (inputs.pw !== inputs.confirmPw) {
          alert("입력하신 비밀번호가 일치하지 않습니다.")
-      } else if (!name) {
+      } else if (!inputs.name) {
          alert("이름을 입력해주세요.");
-      } else if (!isDupliCheck) {
+      } else if (!isDuplicationCheck) {
          alert("이메일 중복 확인을 해주세요.");
       }
       else {
          axios.post('http://localhost:3001/users', {
-            name: name,
-            email: email,
-            password: pw
+            name: inputs.name,
+            email: inputs.email,
+            password: inputs.pw
          })
             .then(res => console.log(res.data))
             .catch(err => console.log(err))
-         setIsActive(true);
          alert("회원가입을 환영합니다.")
-         // navigate('/login');
+         navigate('/login');
       }
    }
 
    // 이메일 중복 체크
    const handleCheckedDuplication = () => {
-      if (email === '') {
+      if (inputs.email === '') {
          setEmailMsg("이메일을 입력해주세요.");
       } else {
-         axios.get(`http://localhost:3001/users?email=${email}`)
+         axios.get(`http://localhost:3001/users?email=${inputs.email}`)
             .then(res => {
                if (res.data.length === 0) {
                   setEmailMsg("사용 가능한 이메일입니다.");
-                  setIsDupliCheck(true);
+                  setIsDuplicationCheck(true);
                } else {
                   setEmailMsg("이미 존재하는 이메일입니다.");
                }
@@ -106,7 +85,7 @@ function Join() {
                   name='email'
                   placeholder="email"
                   // 포커스 변경 혹은 다음 탭 선택하면 넘어감
-                  onBlur={handleEmail}
+                  onBlur={handleOnChange}
                />
                <button onClick={handleCheckedDuplication}>중복 확인</button>
             </div>
@@ -115,27 +94,27 @@ function Join() {
                <h4>비밀번호</h4>
                <input type='password'
                   name='pw'
-                  value={pw}
+                  value={inputs.pw}
                   placeholder="Password"
-                  onChange={handlePw}
+                  onChange={handleOnChange}
                />
             </div>
             <div className={style.join_input}>
                <h4>비밀번호 확인</h4>
                <input type='password'
                   name='confirmPw'
-                  value={confirmPw}
+                  value={inputs.confirmPw}
                   placeholder="Confirm Password"
-                  onChange={handleConfirmPw}
+                  onChange={handleOnChange}
                />
             </div>
             <div className={style.join_input}>
                <h4>이름</h4>
                <input type='text'
                   name='name'
-                  value={name}
+                  value={inputs.name}
                   placeholder="이름"
-                  onChange={handleName}
+                  onChange={handleOnChange}
                />
             </div>
             <div className={style.join_btn}>

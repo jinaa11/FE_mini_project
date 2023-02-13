@@ -1,8 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useRecoilState } from "recoil";
 import style from './CartList.module.css';
-import { CartCountState } from '../../state/CartCountState';
 
 function CartList({ cartData, isDelete, setIsDelete }) {
    const [cartObj, setCartObj] = useState(
@@ -16,8 +14,6 @@ function CartList({ cartData, isDelete, setIsDelete }) {
          qty: cartData.qty
       }
    )
-
-   const [cartQty, setCartQty] = useRecoilState(CartCountState);
 
    const url = `http://localhost:3001/products/${cartData.productId}`;
 
@@ -67,8 +63,9 @@ function CartList({ cartData, isDelete, setIsDelete }) {
       console.log(cartObj);
    }
 
-   // delete qty (삭제 후 바로 반영 안 됨 - 새로고침 눌러야함)
+   // delete cart
    const handleDelete = () => {
+      // 확인: true, 취소: false
       let result = window.confirm(`${cartObj.productName} 상품을 삭제하시겠습니까?`);
       console.log(result);
       if(result) {
