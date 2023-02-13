@@ -44,3 +44,21 @@ export const headerTop = [
       link: '/cart'
    },
 ]
+
+export const headerTop2 = [
+   {
+      id: 1,
+      name: '로그아웃',
+      link:''
+   },
+   {
+      id: 2,
+      name: '마이페이지',
+      link: '/mypage'
+   },
+   {
+      id: 3,
+      name: '장바구니',
+      link: '/cart'
+   },
+]

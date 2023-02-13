@@ -1,22 +1,48 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
-import { headerTop } from "../../../data/headerMenu";
+import { headerTop, headerTop2 } from "../../../data/headerMenu";
 import { logInState } from "../../state/logInState";
+import { tokenState } from "../../state/tokenState";
 import style from './HeaderTopMenu.module.css';
 
 function HeaderTopMenu() {
-   const [user, setUser] = useRecoilState(logInState);
-   
+   const [login, setLogin] = useRecoilState(logInState);
+   const [token, setToken] = useRecoilState(tokenState);
+   console.log(login);
+
+   const handleLogout = () => {
+      setLogin(false);
+      setToken('');
+   }
+
+
    return (
       <div className={style.topMenu}>
          <ul>
-            {  
-               headerTop.map(menu => (
-                  <li key={menu.id}>
-                     <Link to={menu.link}>{menu.name}</Link>
-                  </li>
-               ))
+            {
+               login ?
+                  <>
+                     <li>{token.name}님 환영합니다.</li>
+                     {
+                        headerTop2.map(menu => (
+                           <li key={menu.id}>
+                              {
+                                 menu.name !== '로그아웃' ?
+                                    <Link to={menu.link}>{menu.name}</Link>
+                                    :
+                                    <span style={{ cursor: 'pointer' }} onClick={handleLogout}>{menu.name}</span>
+                              }
+                           </li>
+                        ))
+                     }
+                  </>
+                  :
+                  headerTop.map(menu => (
+                     <li key={menu.id}>
+                        <Link to={menu.link}>{menu.name}</Link>
+                     </li>
+                  ))
             }
          </ul>
       </div>

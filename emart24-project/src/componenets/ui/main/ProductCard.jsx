@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import style from './ProductCard.module.css';
 
 function ProductCard({ product }) {
-
-
    return (
       <div className={style.productCardWrap}>
          <div className={style.productCard}>

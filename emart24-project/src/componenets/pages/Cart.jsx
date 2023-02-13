@@ -5,6 +5,7 @@ import CartList from "../ui/cart/CartList";
 function Cart() {
    const userId=1;
    const [cartDatas, setCartDatas] = useState([]);
+   const [isDelete, setIsDelete] = useState(false);
 
    useEffect(() => {
       axios.get(`http://localhost:3001/carts?userId=${userId}`)
@@ -12,7 +13,7 @@ function Cart() {
          console.log(res.data)
          setCartDatas(res.data);
       })
-   }, [userId]);
+   }, [userId, isDelete]);
    
    return(
       <div>
@@ -20,7 +21,9 @@ function Cart() {
             cartDatas && cartDatas.map(cartData => (
                <CartList
                key={cartData.id}
-               cartData={cartData} />
+               cartData={cartData}
+               isDelete={isDelete}
+               setIsDelete={setIsDelete} />
             ))
          }
       </div>

@@ -4,7 +4,7 @@ import { useRecoilState } from "recoil";
 import style from './CartList.module.css';
 import { CartCountState } from '../../state/CartCountState';
 
-function CartList({ cartData }) {
+function CartList({ cartData, isDelete, setIsDelete }) {
    const [cartObj, setCartObj] = useState(
       {
          id: cartData.id,
@@ -69,12 +69,16 @@ function CartList({ cartData }) {
 
    // delete qty (삭제 후 바로 반영 안 됨 - 새로고침 눌러야함)
    const handleDelete = () => {
-      axios.delete(`http://localhost:3001/carts/${cartObj.id}`)
+      let result = window.confirm(`${cartObj.productName} 상품을 삭제하시겠습니까?`);
+      console.log(result);
+      if(result) {
+         axios.delete(`http://localhost:3001/carts/${cartObj.id}`)
          .then(res => {
             console.log(res.data)
-            setCartQty(cartQty - 1)
+            setIsDelete(!isDelete)
          })
          .catch(err => console.log(err))
+      }
    }
 
    return (

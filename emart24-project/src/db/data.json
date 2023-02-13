@@ -267,44 +267,19 @@
       "name": "김진아",
       "email": "jan2047@naver.com",
       "password": "1234"
+    },
+    {
+      "name": "홍길동",
+      "email": "gildong2@gmail.com",
+      "password": "1234",
+      "id": 3
+    },
+    {
+      "name": "abc",
+      "email": "abc@naver.com",
+      "password": "1234",
+      "id": 4
     }
   ],
-  "carts": [
-    {
-      "productId": 2,
-      "userId": 1,
-      "qty": 3,
-      "id": 16
-    },
-    {
-      "productId": 11,
-      "userId": 1,
-      "qty": 1,
-      "id": 17
-    },
-    {
-      "productId": 18,
-      "userId": 1,
-      "qty": 1,
-      "id": 18
-    },
-    {
-      "productId": 7,
-      "userId": 1,
-      "qty": 3,
-      "id": 19
-    },
-    {
-      "productId": 8,
-      "userId": 1,
-      "qty": 3,
-      "id": 20
-    },
-    {
-      "productId": 3,
-      "userId": 1,
-      "qty": 3,
-      "id": 21
-    }
-  ]
+  "carts": []
 }
