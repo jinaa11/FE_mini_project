@@ -9,7 +9,6 @@ import style from './HeaderTopMenu.module.css';
 function HeaderTopMenu() {
    const [login, setLogin] = useRecoilState(logInState);
    const [token, setToken] = useRecoilState(tokenState);
-   console.log(login);
 
    const handleLogout = () => {
       // 로그인, 토큰 스테이트 초기화

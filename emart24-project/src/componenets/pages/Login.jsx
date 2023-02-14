@@ -1,35 +1,37 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useRecoilState, useSetRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import { logInState } from "../state/logInState";
 import { tokenState } from "../state/tokenState";
 import style from './Login.module.css';
 
 function Login() {
-   const [inputEmail, setInputEmail] = useState('');
-   const [inputPw, setInputPw] = useState('');
-   const [button, setButton] = useState(true);
+   const [inputs, setInputs] = useState({
+      email: '',
+      pw: ''
+   });
+
+   const handleOnChange = (e) => {
+      setInputs({
+         ...inputs,
+         [e.target.name]: e.target.value
+      })
+   }
 
    const navigate = useNavigate();
 
-   const [login, setLogin] = useRecoilState(logInState);
+   const setLogin = useSetRecoilState(logInState);
    const setToken = useSetRecoilState(tokenState);
 
-   const handleInputId = (e) => {
-      setInputEmail(e.target.value)
-   }
-   const handleInputPw = (e) => {
-      setInputPw(e.target.value)
-   }
    const handleLogin = (e) => {
       e.preventDefault();
-      if (!inputEmail) {
+      if (!inputs.email) {
          alert("이메일을 입력해주세요.");
-      } else if (!inputPw) {
+      } else if (!inputs.pw) {
          alert("비밀번호를 입력해주세요.");
       } else {
-         axios.get(`http://localhost:3001/users?email=${inputEmail}&${inputPw}`)
+         axios.get(`http://localhost:3001/users?email=${inputs.email}&password=${inputs.pw}`)
             .then(res => {
                console.log(res.data);
                if (res.data.length === 0) {
@@ -44,9 +46,6 @@ function Login() {
       }
    }
 
-   const changeButton = () => {
-      inputEmail.includes('@') ? setButton(false) : setButton(true);
-   }
    const goJoin = () => {
       navigate('/join');
    }
@@ -58,21 +57,19 @@ function Login() {
             <div className={style.login_input}>
                <h4>이메일</h4>
                <input type='text'
-                  name='inputEmail'
-                  value={inputEmail}
+                  name='email'
+                  value={inputs.email}
                   placeholder="Email"
-                  onChange={handleInputId}
-                  onKeyUp={changeButton}
+                  onChange={handleOnChange}
                />
             </div>
             <div className={style.login_input}>
                <h4>비밀번호</h4>
                <input type='password'
-                  name='inputPw'
-                  value={inputPw}
+                  name='pw'
+                  value={inputs.pw}
                   placeholder="Password"
-                  onChange={handleInputPw}
-                  onKeyUp={changeButton}
+                  onChange={handleOnChange}
                />
             </div>
             <div className={style.login_etc}>

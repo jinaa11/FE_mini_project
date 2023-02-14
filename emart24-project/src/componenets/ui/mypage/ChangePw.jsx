@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import { tokenState } from '../../state/tokenState';
 import style from './ChangePw.module.css'
@@ -13,30 +14,29 @@ function ChangePw() {
       newPw: '',
       confirmNewPw: ''
    });
+   const navigate = useNavigate();
 
    const handleOnChange = (e) => {
       setInputs({
          ...inputs,
          [e.target.name]: e.target.value,
       })
-      setIsCorrectPw(false);
-      axios.get(`http://localhost:3001/users?id=${token.id}`)
+      if (e.target.name === 'pw') {
+         setIsCorrectPw(false);
+         axios.get(`http://localhost:3001/users/${token.id}`)
          .then(res => {
-            console.log(res.data[0].password);
-            if (res.data[0].password !== inputs.pw) {
-               console.log(inputs.pw);
+            if (res.data.password !== e.target.value) {
                setErrMsg("현재 비밀번호가 틀렸습니다.")
             } else {
-               setErrMsg("");
                setIsCorrectPw(true);
+               setErrMsg("");
             }
          })
          .catch(err => console.log(err))
-
+      }
    }
 
    const handleModify = (e) => {
-      // e.preventDefalut();
       if (!inputs.pw) {
          alert("현재 비밀번호를 입력해주세요.");
       } else if (!inputs.newPw) {
@@ -46,13 +46,16 @@ function ChangePw() {
       } else if (inputs.newPw !== inputs.confirmNewPw) {
          alert("입력하신 비밀번호가 일치하지 않습니다..");
       } else if (!isCorrectPw) {
-         alert("현재 비밀번호가 틀립니다. 다시 입력해주세요.")
+         alert("현재 비밀번호가 틀립니다. 다시 입력해주세요.");
       } else {
-         axios.patch(`http://localhost:3001/users?id=${token.id}`, {
+         axios.patch(`http://localhost:3001/users/${token.id}`, {
             password: inputs.newPw
          })
             .then(res => {
-               console.log(res.data[0]);
+               console.log(res.data);
+               alert("비밀번호 변경이 완료되었습니다.");
+               navigate('/');
+
             })
             .catch(err => console.log(err))
       }
@@ -67,7 +70,6 @@ function ChangePw() {
                <h4>현재 비밀번호</h4>
                <input type='password'
                   name='pw'
-                  // value={inputs.pw}
                   placeholder="현재 비밀번호를 입력하세요."
                   onBlur={handleOnChange}
                />

@@ -1,14 +1,17 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import { tokenState } from "../state/tokenState";
 import style from './ProductDetail.module.css';
 
 function ProductDetail() {
    // 객체 안의 key값에 해당하는 value를 가져옴
    const { id } = useParams();
    const [product, setProduct] = useState();
+   const token = useRecoilValue(tokenState);
 
-   const userId = 1;
+   const userId = token.id;
    const navigate = useNavigate();
 
    const [cartCount, setCartCount] = useState(1);
@@ -29,7 +32,7 @@ function ProductDetail() {
    // 같은 상품 아이디의 id와 qty get
    const getCartIdAsExistSameProduct = async () => {
       let result = false;
-      await axios.get(`http://localhost:3001/carts?userId=1&productId=${id}`)
+      await axios.get(`http://localhost:3001/carts?userId=${userId}}&productId=${id}`)
          .then(res => {
             if (res.data.length !== 0) {
                result = { id: res.data[0].id, qty: res.data[0].qty }
